@@ -1,0 +1,26 @@
+// gradle 고정 설정하고 라이브러리를 땡겨온다
+plugins {
+	id 'org.springframework.boot' version '2.6.1'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+	id 'java'
+}
+
+group = 'hello'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral() // 라이브러리를 다운로드 받아라 이거당
+}
+
+dependencies { // 라이브러리들 (라이브러리와 의존관계를 가지고 있다)
+	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	testImplementation ('org.springframework.boot:spring-boot-starter-test') {
+		exclude group:'org.junit.vintage', module: 'junit-vintage-engine'
+	}
+}
+
+test {
+	useJUnitPlatform()
+}
