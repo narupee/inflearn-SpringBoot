@@ -60,6 +60,7 @@ public class HelloController {
         public void setName(String name) {
             this.name = name;
         } // [용어] "겟터셋터 == 프로퍼티 방식" 이라고도 불림!
+                                                               // 커맨드+N : 겟또셋또 여는 단축키
     }
 }
 
