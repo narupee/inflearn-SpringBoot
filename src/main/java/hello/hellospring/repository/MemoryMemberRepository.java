@@ -37,3 +37,4 @@ public class MemoryMemberRepository implements MemberRepository { // 임포트(�
 }
 // 구현 끝
 // 동작 검증 방법 -> "테스트 케이스 작성" 하는 것 !!!
+// 자바는 JUnit(제이유닛) 프레임워크로 테스트를 실행(실행시간,반복실행,여러 테스트를 한번에 실행하는 불가한 문제를 해결)
