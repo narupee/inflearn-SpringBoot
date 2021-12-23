@@ -2,7 +2,10 @@ package hello.hellospring.repository;
 
 import hello.hellospring.domain.Member;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
+// 테스트는 서로 의존관계(순서 상관X) 없이 설계가 되어야함
+// 그러기 위해 테스트가 끝나고 깔끔하게 지워주는 코드가 작성되어야함
 
 import java.util.List;
 import java.util.Optional;
@@ -11,6 +14,11 @@ import static org.assertj.core.api.Assertions.*; // assertThat 부분 스태틱�
 
 class MemoryMemberRepositoryTest {  // 굳이 퍼플릭 안해도되서 뺌!
      MemoryMemberRepository repository = new MemoryMemberRepository();
+
+    @AfterEach // 테스트 끝나고 깔끔하게 지워주는 코드
+    public void aftreEach() {
+        repository.clearStore();
+    }
 
      @Test
     public void save() {

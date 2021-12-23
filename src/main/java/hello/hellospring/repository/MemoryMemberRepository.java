@@ -34,6 +34,10 @@ public class MemoryMemberRepository implements MemberRepository { // 임포트(�
     public List<Member> findAll() { // 자바 실무에서 리스트 많이 쓰임!!!
         return new ArrayList<>(store.values()); // 스토어에 있는 벨류(멤버) 반환
     }
+
+    public void clearStore() {
+        store.clear(); // 싹 지워줘서 클린하게 해줌
+    }
 }
 // 구현 끝
 // 동작 검증 방법 -> "테스트 케이스 작성" 하는 것 !!!
